@@ -56,3 +56,11 @@ export interface IService {
   onClickOutside: () => void;
   isSelected: boolean
 }
+
+export interface INode {
+  isSelected: boolean;
+  isServiceSelected: boolean;
+  onClickOutside: () => void;
+  onNodeClick: () => void;
+  onServiceClick: () => void;
+}

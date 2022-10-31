@@ -7,11 +7,17 @@ import Node from "../toolbox/node/node";
 import styles from "./canvas.module.scss";
 
 function Canvas(props: ICanvas) {
-  const [isServiceSelected, setIsServiceSelected] = useState(false);
   const [projectView, setProjectView] = useState(ProjectView.components);
+  const [isNodeSelected, setIsNodeSelected] = useState(false);
+  const [isServiceSelected, setIsServiceSelected] = useState(false);
 
   const toggleServiceSelected = () => {
     setIsServiceSelected((current) => !current);
+  };
+
+  const handleNodeClickOutside = () => {
+    setIsServiceSelected(false);
+    setIsNodeSelected(false);
   };
 
   const toggleProjectView = () => {
@@ -51,7 +57,13 @@ function Canvas(props: ICanvas) {
           </div>
         ) : null
       ) : (
-        <Node />
+        <Node
+          isSelected={isNodeSelected}
+          isServiceSelected={isServiceSelected}
+          onClickOutside={handleNodeClickOutside}
+          onNodeClick={() => setIsNodeSelected(true)}
+          onServiceClick={() => setIsServiceSelected(true)}
+        />
       )}
     </div>
   );
