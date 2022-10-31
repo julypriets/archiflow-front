@@ -1,4 +1,3 @@
-import { JSXElement } from "@typescript-eslint/types/dist/generated/ast-spec";
 import { ReactElement } from "react";
 
 export interface IButton {
@@ -12,21 +11,21 @@ export interface IButton {
 
 export enum ButtonType {
   standard = "standard",
-  small = "small",
+  small = "small"
 }
 
 export enum ButtonColor {
   primary = "primary",
   secondary = "secondary",
   disabled = "disabled",
-  warning = "warning",
+  warning = "warning"
 }
 
 export interface ISidebar {
-  mode: ISidebarMode
+  view: ProjectView;
 }
 
-export enum ISidebarMode {
+export enum ProjectView {
   components = "components",
   deployment = "deployment"
 }
@@ -38,4 +37,16 @@ export interface IItem {
 
 export interface IItemList {
   items: IItem[];
+}
+
+export interface ISwitcher {
+  view: ProjectView;
+}
+
+export enum ItemTypes {
+  ITEM = "item"
+}
+
+export interface ICanvas {
+
 }

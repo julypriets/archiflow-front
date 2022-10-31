@@ -5,8 +5,9 @@ export default function Document() {
     <Html>
       <Head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Work+Sans:wght@400;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap"
           rel="stylesheet"/>
+        <title>Archiflow</title>
       </Head>
       <body>
       <Main/>

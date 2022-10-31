@@ -3,11 +3,17 @@
 .sidebar {
   width: 21rem;
   min-height: 100vh;
+  border: 1px solid #DADCDE;
+  border-top: 0;
 
   &__section {
     padding: 2rem 1rem 1rem 1rem;
-    border: 1px solid #DADCDE;
-    border-top: 0;
+    border-bottom: 1px solid #DADCDE;
+    border-left-width: 1px;
+
+    &:last-child {
+      border-bottom: 0;
+    }
 
     h1 {
       font-weight: 500;

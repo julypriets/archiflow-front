@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Archify</title>
+        <title>Archiflow</title>
         <meta
           name="description"
           content="The intelligent diagramming application to create model-based architectures"

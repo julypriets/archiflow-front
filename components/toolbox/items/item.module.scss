@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../../../styles/variables";
 
 .item {
   width: 6rem;
@@ -10,10 +10,11 @@
   gap: 0.5rem;
   transition: 0.3s;
   cursor: pointer;
+  color: $color-gray-1;
 
   svg {
     transition: 0.3s;
-    fill: red;
+    fill: $color-gray-1;
   }
 
   &:hover {
@@ -21,7 +22,7 @@
     color: $color-independence;
 
     svg {
-      fill: red;
+      fill: $color-independence;
     }
   }
 }

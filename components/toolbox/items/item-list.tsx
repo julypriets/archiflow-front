@@ -1,5 +1,5 @@
 import React from 'react';
-import { IItem, IItemList } from "../../types";
+import { IItem, IItemList } from "../../../types";
 import Item from "./item";
 import styles from './item-list.module.scss';
 
