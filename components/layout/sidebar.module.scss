@@ -1,0 +1,24 @@
+@import "../../styles/variables.scss";
+
+.sidebar {
+  width: 21rem;
+  min-height: 100vh;
+
+  &__section {
+    padding: 2rem 1rem 1rem 1rem;
+    border: 1px solid #DADCDE;
+    border-top: 0;
+
+    h1 {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      color: $color-gray-3;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -12,6 +12,7 @@
   align-items: center;
   position: relative;
   gap: 2rem;
+  overflow: hidden;
 
   &__cube {
     position: fixed;
@@ -23,7 +24,7 @@
 
   &__triangle {
     position: fixed;
-    bottom: -2rem;
+    bottom: -2.5rem;
     left: 0;
     width: 572.4px;
     height: 637.65px;

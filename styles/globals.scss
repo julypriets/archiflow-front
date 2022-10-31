@@ -30,12 +30,23 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+.title {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
 .heading {
   font-family: 'Poppins', sans-serif;
   font-size: 1.32rem;
 }
 
-.title {
-  font-weight: 600;
-  font-size: 2rem;
+.subheading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
 }
+
+.subheading-2 {
+  font-size: 0.94rem;
+  font-weight: 500;
+}
+

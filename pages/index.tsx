@@ -35,7 +35,7 @@ const Home: NextPage = () => {
             <input className={styles.login__input} type="email" name="email" placeholder="Email"/>
             <input className={styles.login__input} type="password" name="password" placeholder="Password"/>
             <input className={styles.login__input} type="password" name="password" placeholder="Confirm password"/>
-            <Link href="">
+            <Link href="/projects/1">
               <p className={styles.login__button}>Join</p>
             </Link>
             <p className={styles.login__footer}>Already have an account? <span>Log in</span></p>
