@@ -1,14 +1,14 @@
 import React from 'react';
-import styles from './item.module.scss';
-import Image from 'next/image';
+import { IItem } from "../../types";
+import styles from "./item.module.scss";
 
-function Item(props: any) {
-  const { name } = props.item;
+function Item(props: IItem) {
+  const { name, icon } = props;
 
   return (
     <div className={styles.item}>
-      {/*<Image src={} />*/}
-      <p>{name}</p>
+      {icon}
+      {name}
     </div>
   );
 }

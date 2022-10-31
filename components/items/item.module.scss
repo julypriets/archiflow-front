@@ -1,4 +1,27 @@
+@import "../../styles/variables.scss";
+
 .item {
   width: 6rem;
   height: 5.875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: 0.3s;
+  cursor: pointer;
+
+  svg {
+    transition: 0.3s;
+    fill: red;
+  }
+
+  &:hover {
+    background-color: $color-background;
+    color: $color-independence;
+
+    svg {
+      fill: red;
+    }
+  }
 }

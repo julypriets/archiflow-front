@@ -1,16 +1,19 @@
 import React, { Fragment } from 'react';
-import styles from './sidebar.module.scss';
+import { IItem, ISidebar, ISidebarMode } from "../../types";
+import EmailIcon from "../icons/email-icon";
+import SettingsIcon from "../icons/settings-icon";
+import StorageIcon from "../icons/storage-icon";
 import ItemList from '../items/item-list';
+import styles from './sidebar.module.scss';
 
-// TODO: remove any type
-function Sidebar(props: any) {
-  const items = [
-    { name: "Service" },
-    { name: "Database" },
-    { name: "Broker" }
+function Sidebar(props: ISidebar) {
+  const items: IItem[] = [
+    { name: "Service", icon: <SettingsIcon /> },
+    { name: "Database", icon: <StorageIcon /> },
+    { name: "Broker", icon: <EmailIcon /> }
   ]
 
-  const content = props.mode === "toolbox" ?
+  const content = props.mode === ISidebarMode.components ?
     (<Fragment>
       <div className={styles.sidebar__section}>
         <h1 className="heading">Toolbox</h1>
@@ -20,7 +23,6 @@ function Sidebar(props: any) {
         <h2 className="subheading-2">Components</h2>
         <ItemList items={items}/>
       </div>
-
     </Fragment>)
     : (<div></div>)
 

@@ -1,17 +1,16 @@
 import React from 'react';
+import { IItem, IItemList } from "../../types";
+import Item from "./item";
 import styles from './item-list.module.scss';
-import Item from './item';
 
-export interface IItem {
-  name: string;
-}
+function ItemList(props: IItemList) {
+  const { items } = props;
 
-function ItemList(props: any) {
   return (
     <div className={styles.item_list}>
-      {props.items.map((item: IItem) => {
+      {items.map((item: IItem) => {
         return (
-          <Item key={item.name} item={item}/>
+          <Item key={item.name} name={item.name} icon={item.icon}/>
         );
       })}
     </div>
