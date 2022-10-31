@@ -3,7 +3,7 @@ import { ProjectView, ISwitcher } from "../../types";
 import styles from "./switcher.module.scss";
 
 function Switcher(props: ISwitcher) {
-  const { view } = props;
+  const { view, toggleAction } = props;
 
   return (
     <div className={styles.switcher}>
@@ -13,6 +13,7 @@ function Switcher(props: ISwitcher) {
             ? styles.switcher__item__active
             : styles.switcher__item
         }
+        onClick={toggleAction}
       >
         Components
       </p>
@@ -22,6 +23,7 @@ function Switcher(props: ISwitcher) {
             ? styles.switcher__item__active
             : styles.switcher__item
         }
+        onClick={toggleAction}
       >
         Deployment
       </p>

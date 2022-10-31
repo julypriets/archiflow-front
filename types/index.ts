@@ -41,6 +41,7 @@ export interface IItemList {
 
 export interface ISwitcher {
   view: ProjectView;
+  toggleAction: () => void;
 }
 
 export enum ItemTypes {
@@ -49,4 +50,9 @@ export enum ItemTypes {
 
 export interface ICanvas {
 
+}
+
+export interface IService {
+  onClickOutside: () => void;
+  isSelected: boolean
 }

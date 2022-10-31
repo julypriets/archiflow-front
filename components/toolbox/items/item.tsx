@@ -5,7 +5,7 @@ import styles from "./item.module.scss";
 
 function Item(props: IItem) {
   const { name, icon } = props;
-  const serviceImgSrc = "@/public/images/service-preview.png";
+  const serviceImgSrc = "@/public/images/component-preview.png";
 
   const [{ isDragging }, drag, preview] = useDrag(
     () => ({

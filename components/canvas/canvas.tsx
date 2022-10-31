@@ -1,11 +1,27 @@
 import React, { useState } from "react";
+import { useDrop } from "react-dnd";
 import { ICanvas, ItemTypes, ProjectView } from "../../types";
 import Switcher from "../switcher/switcher";
-import Service from "../toolbox/service/service";
+import Component from "../toolbox/component/component";
+import Node from "../toolbox/node/node";
 import styles from "./canvas.module.scss";
-import { useDrop } from "react-dnd";
 
 function Canvas(props: ICanvas) {
+  const [isServiceSelected, setIsServiceSelected] = useState(false);
+  const [projectView, setProjectView] = useState(ProjectView.components);
+
+  const toggleServiceSelected = () => {
+    setIsServiceSelected((current) => !current);
+  };
+
+  const toggleProjectView = () => {
+    if (projectView === ProjectView.components) {
+      setProjectView(ProjectView.deployment);
+    } else {
+      setProjectView(ProjectView.components);
+    }
+  };
+
   const [{ isOver }, drop] = useDrop(
     () => ({
       accept: ItemTypes.ITEM,
@@ -21,12 +37,22 @@ function Canvas(props: ICanvas) {
 
   return (
     <div className={styles.canvas} ref={drop}>
-      <Switcher view={ProjectView.components} />
-      {showService ? (
-        <div className={styles.canvas__service}>
-          <Service />
-        </div>
-      ) : null}
+      <Switcher view={projectView} toggleAction={toggleProjectView} />
+      {projectView === ProjectView.components ? (
+        showService ? (
+          <div
+            className={styles.canvas__service}
+            onClick={() => setIsServiceSelected(true)}
+          >
+            <Component
+              isSelected={isServiceSelected}
+              onClickOutside={toggleServiceSelected}
+            />
+          </div>
+        ) : null
+      ) : (
+        <Node />
+      )}
     </div>
   );
 }

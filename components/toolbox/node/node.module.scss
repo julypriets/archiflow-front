@@ -1,0 +1,38 @@
+@import "../../../styles/variables.scss";
+
+.node {
+  position: relative;
+  border: 2px solid $color-gray-1;
+  padding: 0.5rem;
+  font-family: $font-family-heading;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 8rem;
+  width: 13rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -10.5px;
+    top: -24px;
+    left: 7px;
+    height: 20px;
+    background-color: $color-gray-5;
+    transform: skewX(-40deg);
+    border: 2px solid $color-gray-1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: -20px;
+    width: 16px;
+    bottom: 9px;
+    height: calc(100%);
+    background-color: $color-gray-4;
+    transform: skewY(-50deg);
+    z-index: 0;
+    border: 2px solid $color-gray-1;
+  }
+}
