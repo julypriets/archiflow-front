@@ -1,0 +1,80 @@
+@import '../../../styles/variables';
+
+.btn {
+  font: inherit;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: 0.3s;
+  gap: 0.25rem;
+
+  &:hover {
+    cursor: pointer;
+    filter: $filter-hover;
+  }
+
+  &__primary {
+    color: $color-white;
+    background: $color-main;
+
+    svg {
+      fill: $color-white;
+    }
+  }
+
+  &__secondary {
+    color: $color-gray;
+    border-color: $color-gray;
+    background: $color-white;
+
+    svg {
+      transition: 0.3s;
+      fill: $color-gray;
+    }
+
+    &:hover {
+      background-color: $color-gray;
+      color: $color-white;
+
+      svg {
+        fill: $color-white;
+      }
+    }
+  }
+
+  &__warning {
+    color: $color-white;
+    background: $color-orange;
+
+    svg {
+      fill: $color-white;
+    }
+  }
+
+  &__disabled {
+    border-color: $color-gray;
+
+    svg {
+      fill: $color-gray;
+    }
+
+    &:hover {
+      filter: none;
+      cursor: default;
+    }
+  }
+
+  &__standard {
+    @extend .btn;
+    padding: 0.5rem 1rem 0.625rem 1rem;
+    border-radius: 6px;
+  }
+
+  &__small {
+    @extend .btn;
+    padding: 0.4rem 1rem 0.525rem 1rem;
+    border-radius: 6px;
+    font-size: $font-size-body-sm;
+  }
+}
